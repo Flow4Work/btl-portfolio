@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fragrance Sales Portfolio — Dongho Park (Leo)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&family=Noto+Serif+KR:wght@700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#ffffff;
+      --paper:#fbfaf8;
+      --text:#1f1b22;
+      --muted:#756b77;
+      --line:#e8e1e8;
+      --soft:#f7f1f6;
+      --deep:#2c1038;
+      --plum:#6f3b78;
+      --mauve:#b8779d;
+      --rose:#e9b5b8;
+      --cream:#fff5df;
+      --mint:#d9efe6;
+      --green:#0f8a63;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;background:var(--bg)}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:'Noto Sans KR',sans-serif;line-height:1.78;word-break:keep-all}
+    a{color:inherit;text-decoration:none}
+    .page{max-width:920px;min-height:100vh;margin:0 auto;padding:78px 44px 84px;background:#fff}
+    .cover{position:relative;max-width:none;overflow:hidden;min-height:100vh;display:flex;align-items:center;color:#fff;background:
+      radial-gradient(circle at 82% 18%, rgba(255,245,223,.72), transparent 0 12%, transparent 30%),
+      radial-gradient(circle at 72% 76%, rgba(217,239,230,.38), transparent 0 15%, transparent 36%),
+      radial-gradient(circle at 20% 28%, rgba(233,181,184,.45), transparent 0 20%, transparent 38%),
+      linear-gradient(135deg,#20102f 0%,#4c245c 34%,#9d5f8f 66%,#e5b9ad 100%)}
+    .cover:before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,8,30,.74),rgba(20,8,30,.18));z-index:0}
+    .cover:after{content:'';position:absolute;width:520px;height:520px;right:-120px;top:-90px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.16),rgba(255,255,255,0) 66%);filter:blur(2px);z-index:0}
+    .cover-inner{position:relative;z-index:1;width:min(1040px,calc(100% - 88px));margin:0 auto;display:grid;grid-template-columns:1.04fr .76fr;gap:54px;align-items:center}
+    .eyebrow{margin:0 0 18px;color:var(--rose);font-size:10px;font-weight:800;letter-spacing:.22em;text-transform:uppercase}
+    .cover-title{margin:0;font-size:43px;line-height:1.34;font-weight:800;letter-spacing:-.055em;color:#fff}
+    .cover-subtitle{margin:22px 0 44px;color:rgba(255,255,255,.76);font-size:15px;line-height:1.8}
+    .shine-line{width:54px;height:2px;background:linear-gradient(90deg,var(--cream),var(--rose));margin:0 0 62px}
+    .cover-meta{display:grid;grid-template-columns:110px 1fr;gap:7px 18px;color:rgba(255,255,255,.62);font-size:13.5px}
+    .cover-meta strong{color:rgba(255,255,255,.92)}
+    .scent-card{position:relative;min-height:520px;border:1px solid rgba(255,255,255,.24);border-radius:32px;background:linear-gradient(145deg,rgba(255,255,255,.22),rgba(255,255,255,.06));box-shadow:0 30px 90px rgba(37,10,45,.35);backdrop-filter:blur(12px);overflow:hidden;display:flex;align-items:center;justify-content:center}
+    .scent-card:before{content:'KOREA MARKET × THAILAND SALES';position:absolute;left:24px;top:24px;color:rgba(255,255,255,.56);font-size:10px;font-weight:800;letter-spacing:.18em}
+    .bottle{position:relative;width:162px;height:230px;border-radius:44px 44px 70px 70px;background:linear-gradient(145deg,rgba(255,255,255,.62),rgba(255,255,255,.16) 42%,rgba(255,255,255,.08));border:1px solid rgba(255,255,255,.5);box-shadow:inset 0 0 42px rgba(255,255,255,.25),0 26px 70px rgba(45,15,52,.38);animation:floaty 5s ease-in-out infinite}
+    .bottle:before{content:'';position:absolute;left:50%;top:-56px;transform:translateX(-50%);width:58px;height:52px;border-radius:16px 16px 10px 10px;background:linear-gradient(145deg,rgba(255,255,255,.74),rgba(255,255,255,.18));border:1px solid rgba(255,255,255,.48)}
+    .bottle:after{content:'';position:absolute;left:50%;top:-83px;transform:translateX(-50%);width:86px;height:28px;border-radius:18px;background:linear-gradient(90deg,#fff5df,#e9b5b8,#d9efe6);box-shadow:0 10px 22px rgba(0,0,0,.16)}
+    .mist{position:absolute;border-radius:999px;background:rgba(255,255,255,.4);filter:blur(.2px);animation:mist 4.2s ease-in-out infinite}
+    .mist.m1{width:74px;height:74px;right:54px;top:118px}.mist.m2{width:34px;height:34px;left:62px;bottom:116px;animation-delay:.6s}.mist.m3{width:54px;height:54px;right:102px;bottom:70px;animation-delay:1.1s}
+    .scroll{position:absolute;z-index:2;left:50%;bottom:30px;transform:translateX(-50%);display:flex;align-items:center;gap:12px;color:rgba(255,255,255,.76);font-size:11px;letter-spacing:.14em;text-transform:uppercase;animation:bounce 1.55s ease-in-out infinite}
+    .scroll .circle{width:36px;height:36px;border:1px solid rgba(255,255,255,.36);border-radius:999px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.08)}
+    @keyframes bounce{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,-12px)}}
+    @keyframes floaty{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-16px) rotate(1deg)}}
+    @keyframes mist{0%,100%{transform:translateY(0);opacity:.55}50%{transform:translateY(-16px);opacity:.88}}
+    .title{font-family:'Noto Serif KR',serif;color:var(--deep);font-size:29px;line-height:1.45;margin:0 0 24px;letter-spacing:-.035em}
+    .lead{font-size:15.5px;line-height:1.92;max-width:720px;margin:0;color:#2f2932}
+    .divider{height:1px;background:var(--line);margin:38px 0 34px}
+    .mini{margin:0 0 9px;color:var(--mauve);font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+    .sub{font-family:'Noto Serif KR',serif;color:var(--deep);font-size:21px;margin:0 0 18px;letter-spacing:-.03em}
+    .grid{display:grid;gap:18px}.grid.two{grid-template-columns:1fr 1fr}.grid.three{grid-template-columns:repeat(3,1fr)}
+    .card{padding:22px 22px 24px;background:var(--paper);border:1px solid var(--line);border-radius:22px}
+    .card strong{display:block;margin-bottom:8px;color:var(--deep);font-size:15px}.card p{margin:0;color:var(--muted);font-size:13.5px;line-height:1.75}
+    .meta-list{display:grid;gap:10px}.meta-row{display:grid;grid-template-columns:112px 1fr;gap:16px}.label{color:var(--plum);font-weight:800}.value{color:#332b35}
+    .flow{position:relative;padding-left:88px}.flow:before{content:'';position:absolute;left:48px;top:84px;bottom:72px;width:2px;background:linear-gradient(var(--rose),var(--mauve),var(--mint))}.badge{position:absolute;left:29px;top:78px;width:40px;height:40px;border-radius:999px;background:linear-gradient(135deg,var(--deep),var(--plum));color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Noto Serif KR',serif;font-size:18px;font-weight:700;box-shadow:0 0 0 9px #fff}.step-title{font-family:'Noto Serif KR',serif;color:var(--deep);font-size:27px;line-height:1.45;margin:0 0 8px;letter-spacing:-.04em}.duration{margin:0 0 30px;color:var(--mauve);font-size:13px;font-weight:800}.key{margin:0 0 24px;padding:15px 17px;border-left:4px solid var(--mauve);background:var(--soft);font-weight:700;color:var(--deep);border-radius:0 16px 16px 0}.block p{margin:0 0 14px}.small{margin:20px 0 0;padding:18px 0 0;border-top:1px solid var(--line)}.small h4{margin:0 0 8px;color:var(--deep);font-size:15px}.small p{margin:0;color:var(--muted);font-size:13.7px;line-height:1.78}.table-title{margin:34px 0 12px;color:var(--deep);font-size:14px;font-weight:800}.table-wrap{overflow-x:auto;border-top:2px solid var(--deep);border-bottom:1px solid var(--line);margin-bottom:26px;background:#fff}table{width:100%;border-collapse:collapse;font-size:12.7px;line-height:1.55}th{padding:11px 10px;background:#f6eef6;color:var(--deep);text-align:left;border-bottom:1px solid var(--line);white-space:nowrap}td{padding:11px 10px;border-bottom:1px solid var(--line);vertical-align:top}.good{color:var(--green);font-weight:800}.note{padding:20px 22px;background:linear-gradient(135deg,#fff8ea,#f8edf5);border:1px solid var(--line);border-radius:20px;color:#3a303b}.note p{margin:0}.final{margin-top:30px;padding:38px;background:radial-gradient(circle at top right,rgba(255,245,223,.28),transparent 36%),linear-gradient(135deg,#20102f 0%,#432453 56%,#7f4d76 100%);color:#fff;border-radius:26px}.final-title{margin:0;color:#fff;font-size:25px;font-weight:800;line-height:1.72;letter-spacing:-.04em}.final-rule{width:54px;height:2px;background:linear-gradient(90deg,var(--cream),var(--rose));margin:25px 0}.final-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.final-grid div{border-top:1px solid rgba(255,255,255,.22);padding-top:15px}.final-grid strong{display:block;margin-bottom:7px;color:rgba(255,255,255,.96);font-size:13px}.final-grid span{display:block;color:rgba(255,255,255,.68);font-size:12.5px;line-height:1.65}.footer{margin-top:26px;color:rgba(255,255,255,.48);font-size:12px}
+    @media(max-width:780px){.page{padding:58px 24px 70px}.cover-inner{width:calc(100% - 48px);grid-template-columns:1fr;gap:38px}.cover-title{font-size:33px}.scent-card{min-height:310px}.bottle{width:118px;height:168px}.grid.two,.grid.three,.final-grid{grid-template-columns:1fr}.flow{padding-left:62px}.flow:before{left:31px}.badge{left:11px}.meta-row{grid-template-columns:1fr;gap:2px}}
+    @page{size:A4;margin:16mm 18mm}@media print{.page{width:174mm;max-width:174mm;min-height:265mm;padding:0;page-break-before:always}.page:first-child{page-break-before:auto}.cover{width:210mm;min-height:297mm;margin:-16mm -18mm}.scroll{display:none}.card,.note,.final,table,tr{break-inside:avoid;page-break-inside:avoid}thead{display:table-header-group}}
+  </style>
+</head>
+<body>
+  <section class="page cover">
+    <div class="cover-inner">
+      <div>
+        <p class="eyebrow">포트폴리오 / 직무 제출용 문서</p>
+        <h1 class="cover-title">하나의 고객 브리프가<br>하나의 향료 프로젝트와<br>매출 계정으로 확장되기까지</h1>
+        <p class="cover-subtitle">글로벌 향료사 태국 지사 Sales Manager 지원을 위한<br>B2B Sales / Business Development 실행 포트폴리오</p>
+        <div class="shine-line"></div>
+        <div class="cover-meta">
+          <strong>작성자</strong><span>Dongho Park (Leo)</span>
+          <strong>작성일</strong><span>2026.07.01</span>
+          <strong>대상 직무</strong><span>Sales Manager — Bangkok / Korea Market</span>
+        </div>
+      </div>
+      <div class="scent-card" aria-label="Fragrance visual">
+        <div class="mist m1"></div><div class="mist m2"></div><div class="mist m3"></div><div class="bottle"></div>
+      </div>
+    </div>
+    <a class="scroll" href="#about"><span class="circle">↓</span><span>Scroll</span></a>
+  </section>
+
+  <section class="page" id="about">
+    <p class="eyebrow">ABOUT THIS DOCUMENT</p>
+    <h2 class="title">이 문서는 무엇인가</h2>
+    <p class="lead">이 문서는 향료 Sales Manager가 한국 고객사의 요청을 어떻게 신규 매출 기회로 전환하는지 보여주는 실행 중심 포트폴리오입니다.</p>
+    <p class="lead" style="margin-top:18px">향료 산업의 전문 지식을 과장하기보다, 고객 발굴, 브리프 정리, 내부 조율, 샘플 평가, 조건 협의, 계정 확장까지 이어지는 B2B 영업 흐름을 명확하게 보여주는 데 목적이 있습니다.</p>
+    <div class="divider"></div>
+    <p class="mini">ROLE UNDERSTANDING</p>
+    <h3 class="sub">이 직무의 핵심을 5개로 정리</h3>
+    <div class="grid three">
+      <div class="card"><strong>한국 시장 영업 확대</strong><p>화장품, 퍼스널케어, FMCG 고객사를 발굴하고 태국 지사의 매출 기회로 연결합니다.</p></div>
+      <div class="card"><strong>고객 요청 구조화</strong><p>모호한 향 방향, 출시 일정, 가격 조건을 내부가 실행할 수 있는 브리프로 바꿉니다.</p></div>
+      <div class="card"><strong>내부 부서 조율</strong><p>Evaluation, R&D, Marketing, 영업 지원 부서가 같은 기준으로 움직이게 합니다.</p></div>
+      <div class="card"><strong>샘플 평가 관리</strong><p>1차 샘플, 피드백, 재샘플, 승인까지의 흐름을 일정 안에서 관리합니다.</p></div>
+      <div class="card"><strong>Key Account 확장</strong><p>첫 계약에서 끝내지 않고 제품군 확대, 반복 주문, 분기 리뷰로 이어갑니다.</p></div>
+      <div class="card"><strong>태국 현지 연결</strong><p>방콕 근무 환경에서 한국 고객과 태국 지사 사이의 실행 속도를 맞춥니다.</p></div>
+    </div>
+  </section>
+
+  <section class="page">
+    <p class="eyebrow">PROJECT SCENARIO</p>
+    <h2 class="title">이 문서가 기준으로 삼은 가상 프로젝트</h2>
+    <div class="meta-list">
+      <div class="meta-row"><span class="label">고객사</span><span class="value">한국 중견 K-Beauty 브랜드</span></div>
+      <div class="meta-row"><span class="label">제품군</span><span class="value">태국 시장 출시용 바디미스트 / 바디로션 / 샴푸 라인</span></div>
+      <div class="meta-row"><span class="label">고객 요청</span><span class="value">“태국 MZ 소비자에게 맞는 산뜻하고 고급스러운 향을 찾고 싶습니다.”</span></div>
+      <div class="meta-row"><span class="label">목표</span><span class="value">8주 내 샘플 평가 완료, 12주 내 첫 공급 조건 협의</span></div>
+      <div class="meta-row"><span class="label">확장 방향</span><span class="value">바디미스트 첫 계약 이후 바디로션, 샴푸, 디퓨저 라인으로 확대</span></div>
+    </div>
+    <div class="divider"></div>
+    <div class="note"><p><span class="label">핵심 판단</span><br>향료 영업은 제품을 단순 소개하는 업무가 아닙니다. 고객이 원하는 향, 출시 일정, 가격대, 내부 승인 구조를 빠르게 정리하고, 그 요청을 내부 부서가 움직일 수 있는 실행 언어로 바꾸는 일이 먼저입니다.</p></div>
+  </section>
+
+  <section class="page flow">
+    <div class="badge">1</div>
+    <h2 class="step-title">타깃 고객사 선정</h2>
+    <p class="duration">예상 소요일: 3~5일</p>
+    <div class="key">핵심 포인트 — 아무 고객이나 연락하지 않고, 향료 수요가 실제로 생길 가능성이 높은 고객군부터 좁힙니다.</div>
+    <div class="block">
+      <p><span class="label">목적:</span><br>한국 시장 안에서 향료 수요가 반복적으로 발생할 수 있는 고객군을 먼저 분류합니다.</p>
+      <p><span class="label">방향:</span><br>화장품 브랜드, ODM/OEM 제조사, 퍼스널케어사, 홈케어 브랜드, 태국 진출을 준비하는 유통사를 우선 검토합니다.</p>
+    </div>
+    <p class="table-title">Target Account Map</p>
+    <div class="table-wrap"><table><thead><tr><th>고객군</th><th>니즈</th><th>접근 포인트</th><th>우선순위</th></tr></thead><tbody><tr><td>K-Beauty 브랜드</td><td>신제품 향 개발</td><td>태국 시장용 제품 라인 제안</td><td class="good">상</td></tr><tr><td>ODM/OEM 제조사</td><td>다수 브랜드 대응</td><td>샘플 라이브러리와 빠른 평가 흐름</td><td class="good">상</td></tr><tr><td>퍼스널케어사</td><td>샴푸·바디워시 향 개선</td><td>가격대와 잔향 기준 정리</td><td>중</td></tr><tr><td>홈케어 브랜드</td><td>디퓨저·섬유향수</td><td>프리미엄 향 컨셉 제안</td><td>중</td></tr></tbody></table></div>
+    <div class="small"><h4>완료 기준</h4><p>고객사별 제품군, 예상 니즈, 담당자 후보, 첫 접촉 메시지까지 정리된 상태.</p></div>
+  </section>
+
+  <section class="page flow">
+    <div class="badge">2</div>
+    <h2 class="step-title">첫 접촉 및 니즈 확인</h2>
+    <p class="duration">예상 소요일: 1~2주</p>
+    <div class="key">핵심 포인트 — 처음부터 제품을 팔기보다, 고객이 어떤 출시 문제를 해결하려는지 확인합니다.</div>
+    <div class="block">
+      <p><span class="label">목적:</span><br>고객의 제품군, 타깃 소비자, 출시 일정, 가격대, 향 방향을 확인합니다.</p>
+      <p><span class="label">방향:</span><br>미팅 후 24시간 안에 내용을 요약해 보내고, 고객이 말한 요청을 내부 검토 가능한 문장으로 다시 정리합니다.</p>
+    </div>
+    <p class="table-title">Discovery Question Sheet</p>
+    <div class="table-wrap"><table><thead><tr><th>구분</th><th>확인 질문</th><th>이유</th></tr></thead><tbody><tr><td>제품</td><td>어떤 제품군에 사용할 향인가?</td><td>향 지속력과 원가 기준이 달라짐</td></tr><tr><td>타깃</td><td>태국 현지 소비자 중 누구를 겨냥하는가?</td><td>무거운 향/가벼운 향 판단</td></tr><tr><td>일정</td><td>샘플 평가와 출시 목표일은 언제인가?</td><td>내부 우선순위 설정</td></tr><tr><td>가격</td><td>대중형, 프리미엄, 럭셔리 중 어디인가?</td><td>제안 가능한 향료 범위 설정</td></tr><tr><td>결정</td><td>최종 의사결정자는 누구인가?</td><td>미팅 이후 지연 방지</td></tr></tbody></table></div>
+  </section>
+
+  <section class="page flow">
+    <div class="badge">3</div>
+    <h2 class="step-title">고객 브리프 정리 및 내부 전달</h2>
+    <p class="duration">예상 소요일: 3~7일</p>
+    <div class="key">핵심 포인트 — 고객의 표현을 그대로 넘기지 않고, Evaluation/R&D가 움직일 수 있는 기준으로 바꿉니다.</div>
+    <p class="table-title">Client Brief Sheet</p>
+    <div class="table-wrap"><table><thead><tr><th>항목</th><th>정리 내용</th><th>내부 전달 기준</th></tr></thead><tbody><tr><td>제품군</td><td>바디미스트 / 바디로션 / 샴푸</td><td>용도별 향 지속력 구분</td></tr><tr><td>향 방향</td><td>플로럴, 프루티, 머스크, 시트러스</td><td>1차 후보 5~7개 요청</td></tr><tr><td>피해야 할 향</td><td>더운 날씨에 무겁게 느껴지는 잔향</td><td>태국 기후 고려</td></tr><tr><td>가격대</td><td>대중형과 프리미엄 사이</td><td>원가 범위 확인</td></tr><tr><td>출시 일정</td><td>12주 내 첫 공급 조건 협의</td><td>샘플 일정 역산</td></tr></tbody></table></div>
+    <div class="small"><h4>실무 판단</h4><p>고객이 “산뜻하고 고급스럽게”라고 말하면 내부에서는 실행하기 어렵습니다. 그래서 향 계열, 피해야 할 느낌, 가격대, 출시 일정까지 쪼개서 전달해야 합니다.</p></div>
+  </section>
+
+  <section class="page flow">
+    <div class="badge">4</div>
+    <h2 class="step-title">샘플 평가 및 제안 조율</h2>
+    <p class="duration">예상 소요일: 4~6주</p>
+    <div class="key">핵심 포인트 — 샘플을 보내는 것보다, 피드백을 다음 액션으로 바꾸는 관리가 중요합니다.</div>
+    <p class="table-title">Sample / Evaluation Flow</p>
+    <div class="table-wrap"><table><thead><tr><th>단계</th><th>고객 액션</th><th>내부 액션</th><th>완료 기준</th></tr></thead><tbody><tr><td>1차 제안</td><td>샘플 수령</td><td>후보 향료 5~7개 준비</td><td>평가표 전달</td></tr><tr><td>피드백 회수</td><td>선호/비선호 정리</td><td>수정 방향 분석</td><td>재샘플 기준 확정</td></tr><tr><td>2차 제안</td><td>재평가</td><td>R&D와 개선안 협의</td><td>최종 후보 2~3개 압축</td></tr><tr><td>조건 확인</td><td>가격·물량 문의</td><td>공급 조건 확인</td><td>제안 가격 범위 설정</td></tr></tbody></table></div>
+    <div class="small"><h4>읽기 쉬운 진행 방식</h4><p>각 고객사는 “현재 단계 / 다음 액션 / 막힌 이유” 3가지만 보면 바로 이해되도록 관리합니다.</p></div>
+  </section>
+
+  <section class="page flow">
+    <div class="badge">5</div>
+    <h2 class="step-title">계약 협의 및 계정 확장</h2>
+    <p class="duration">예상 소요일: 2~4주</p>
+    <div class="key">핵심 포인트 — 첫 계약은 끝이 아니라, 다음 제품군과 반복 주문으로 이어지는 시작점입니다.</div>
+    <div class="block">
+      <p><span class="label">목적:</span><br>최종 후보 향료를 기준으로 가격, 최소 주문 수량, 납기, 공급 조건을 정리합니다.</p>
+      <p><span class="label">방향:</span><br>첫 공급 이후 월간 사용량, 고객 반응, 다음 제품군 계획을 확인하며 Key Account로 확장합니다.</p>
+    </div>
+    <p class="table-title">Account Expansion Plan</p>
+    <div class="table-wrap"><table><thead><tr><th>시점</th><th>관리 항목</th><th>다음 제안</th></tr></thead><tbody><tr><td>첫 계약</td><td>가격, 물량, 납기, 승인 이력</td><td>바디미스트 공급 안정화</td></tr><tr><td>1개월 후</td><td>생산 이슈, 고객 반응</td><td>바디로션 향 확장</td></tr><tr><td>분기 리뷰</td><td>판매 흐름, 재주문 가능성</td><td>샴푸/디퓨저 라인 제안</td></tr><tr><td>반기 리뷰</td><td>누적 매출, 계정 성장성</td><td>연간 공급 계획 협의</td></tr></tbody></table></div>
+  </section>
+
+  <section class="page">
+    <p class="eyebrow">SALES PIPELINE</p>
+    <h2 class="title">전체 영업 흐름 한눈에 보기</h2>
+    <p class="lead">영업 관리는 길게 설명하기보다, 고객사별 현재 단계와 다음 액션이 바로 보이게 정리하는 것이 중요합니다.</p>
+    <p class="table-title">Pipeline Dashboard</p>
+    <div class="table-wrap"><table><thead><tr><th>고객사</th><th>제품군</th><th>단계</th><th>예상 매출</th><th>다음 액션</th><th>리스크</th></tr></thead><tbody><tr><td>A 뷰티 브랜드</td><td>바디미스트</td><td>샘플 평가 중</td><td>3,000만원</td><td>2차 피드백 회수</td><td>향 선호 미확정</td></tr><tr><td>B 제조사</td><td>샴푸</td><td>첫 미팅 완료</td><td>5,000만원</td><td>브리프 정리 후 내부 전달</td><td>가격 민감</td></tr><tr><td>C 홈케어 브랜드</td><td>디퓨저</td><td>제안서 발송</td><td>2,000만원</td><td>다음 주 재접촉</td><td>의사결정자 미확인</td></tr><tr><td>D 유통사</td><td>태국 진출 라인</td><td>리드 발굴</td><td>미정</td><td>담당자 확보</td><td>제품 출시 일정 불명확</td></tr></tbody></table></div>
+    <div class="divider"></div>
+    <p class="mini">RISK & RESPONSE</p>
+    <div class="grid two">
+      <div class="card"><strong>향 선호가 모호할 때</strong><p>평가표를 먼저 만들고, 선호/비선호/수정 방향을 선택형으로 회수합니다.</p></div>
+      <div class="card"><strong>가격 협의가 막힐 때</strong><p>프리미엄안과 현실안 두 가지를 나눠 고객이 선택할 수 있게 합니다.</p></div>
+      <div class="card"><strong>내부 일정이 늦어질 때</strong><p>고객에게 늦었다고 말하기보다, 새 일정과 다음 확인일을 함께 제시합니다.</p></div>
+      <div class="card"><strong>의사결정자가 불명확할 때</strong><p>담당자와 대표/구매/상품기획 중 실제 승인자를 초기에 확인합니다.</p></div>
+    </div>
+  </section>
+
+  <section class="page">
+    <p class="eyebrow">MY FIT</p>
+    <h2 class="title">내 경험과 연결되는 지점</h2>
+    <div class="table-wrap"><table><thead><tr><th>공고 요구</th><th>보여줄 역량</th><th>연결 경험</th></tr></thead><tbody><tr><td>신규 고객 발굴</td><td>고객군 분류, 첫 접촉, 후속 논의 관리</td><td>거래소·프로젝트사 대상 신규 협의와 상장 진행</td></tr><tr><td>B2B Sales / BD</td><td>제안 자료, 조건 협의, 일정 관리</td><td>Coinone, Gopax, Indodax 등 협의 경험</td></tr><tr><td>기존 고객 관리</td><td>월간 업데이트, 이슈 대응, 관계 유지</td><td>Bithumb 상장 유지 관련 자료 제출 및 후속 대응</td></tr><tr><td>내부 부서 협업</td><td>요청을 실행 문서로 전환</td><td>서비스 기획, 기능 명세, 개발팀 조율 경험</td></tr><tr><td>태국 근무 가능</td><td>동남아 업체와의 업무 흐름 이해</td><td>FANC에서 태국 포함 동남아 업체와 협의 경험</td></tr></tbody></table></div>
+    <div class="final">
+      <p class="final-title">저는 제품을 단순히 소개하는 영업보다,<br>고객의 요청을 실행 가능한 브리프와 매출 기회로 바꾸는 사람에 가깝습니다.</p>
+      <div class="final-rule"></div>
+      <div class="final-grid">
+        <div><strong>먼저 정리하는 것</strong><span>고객의 제품 목표, 향 방향, 일정, 가격대</span></div>
+        <div><strong>계속 관리하는 것</strong><span>샘플 평가, 내부 조율, 조건 협의, 다음 액션</span></div>
+        <div><strong>끝까지 연결하는 것</strong><span>첫 계약 이후 반복 주문과 제품군 확장</span></div>
+      </div>
+      <p class="footer">Dongho Park (Leo) | 2026.07.01</p>
+    </div>
+  </section>
+</body>
+</html>
